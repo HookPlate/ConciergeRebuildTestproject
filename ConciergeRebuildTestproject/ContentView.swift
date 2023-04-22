@@ -10,6 +10,7 @@ import SwiftUI
 struct TaskRow: View {
     var body: some View {
         Text("Task data goes here")
+        Divider()
     }
 }
 
@@ -19,16 +20,21 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             GeometryReader { geo in
-             //   VStack {
+                VStack {
                     ScrollViewReader { scrollView in
                         ScrollView(.horizontal) {
                             LazyHStack {
                                 ForEach(1...100, id: \.self) { index in
-                                    List {
-                                        Section(header: Text("Important tasks")) {
+                                    LazyVStack {
+                                        Section {
                                             TaskRow()
                                             TaskRow()
                                             TaskRow()
+                                        } header: {
+                                            VStack {
+                                                Text("This is my Header")
+                                                Divider()
+                                            }
                                         }
                                         
                                         Section(header: Text("Other tasks")) {
@@ -80,7 +86,7 @@ struct ContentView: View {
                        
                     }
                     
-              //  }
+                }
             }
             
         }
