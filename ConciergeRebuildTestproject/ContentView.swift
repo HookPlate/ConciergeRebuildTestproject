@@ -7,23 +7,11 @@
 
 import SwiftUI
 
-//struct ContentView: View {
-//    var body: some View {
-//        ScrollViewReader { value in
-//            ScrollView(.horizontal) {
-//                LazyHStack(alignment: .center, spacing: 10) {
-//                    ForEach(1...100, id: \.self) {
-//                        Text("Column \($0)")
-//                    }
-//                }
-//            }
-//            .onAppear {
-//                value.scrollTo(67, anchor: .center)
-//            }
-//
-//        }
-//    }
-//}
+struct TaskRow: View {
+    var body: some View {
+        Text("Task data goes here")
+    }
+}
 
 struct ContentView: View {
     @State private var isShowingCrew = false
@@ -35,10 +23,22 @@ struct ContentView: View {
                     ScrollViewReader { scrollView in
                         ScrollView(.horizontal) {
                             LazyHStack {
-                                ForEach(1...100, id: \.self) {index in
-                                    TestView(viewNumber: index)
-                                        .frame(width: geo.size.width - 100, height: geo.size.height - 50)
-                                        .id(index)
+                                ForEach(1...100, id: \.self) { index in
+                                    List {
+                                        Section(header: Text("Important tasks")) {
+                                            TaskRow()
+                                            TaskRow()
+                                            TaskRow()
+                                        }
+                                        
+                                        Section(header: Text("Other tasks")) {
+                                            TaskRow()
+                                            TaskRow()
+                                            TaskRow()
+                                        }
+                                    }
+                                    .frame(width: geo.size.width - 100, height: geo.size.height - 50)
+                                    .id(index)
                                 }
                             }
                         }
