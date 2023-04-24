@@ -166,7 +166,7 @@ struct ContentView: View {
                                     
                                 }
                                 .frame(width: geo.size.width - 10, height: geo.size.height - 15)
-                                .id(day)
+                                .id(day.id)
                                 .padding(5)
                             }
                         }
