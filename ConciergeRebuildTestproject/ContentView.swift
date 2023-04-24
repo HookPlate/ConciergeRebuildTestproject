@@ -155,10 +155,10 @@ struct ContentView: View {
                 ScrollViewReader { scrollView in
                     ScrollView(.horizontal) {
                         LazyHStack {
-                            ForEach(days, id: \.self) { day in
+                            ForEach(days.indices) { index in
                                 List {
-                                    DayBannerRow(schedule: day)
-                                    ForEach(day.sessionsOnThatDay, id: \.self) { session in
+                                    DayBannerRow(schedule: days[index])
+                                    ForEach(days[index].sessionsOnThatDay, id: \.self) { session in
                                         SessionRow(session: session)
                                     }
                                     
@@ -166,7 +166,7 @@ struct ContentView: View {
                                     
                                 }
                                 .frame(width: geo.size.width - 10, height: geo.size.height - 15)
-                                .id(day.id)
+                                .id(index)
                                 .padding(5)
                             }
                         }
@@ -184,7 +184,7 @@ struct ContentView: View {
                         }
                         Button(action: {
                             withAnimation {
-                                currentIndex = (currentIndex == 0) ? currentIndex + 2 : currentIndex + 1
+                                currentIndex = (currentIndex == days.count - 1) ? currentIndex : currentIndex + 1
                                 print("Scrolling forwards")
                                 scrollView.scrollTo(currentIndex,anchor: .leading)
                             }
