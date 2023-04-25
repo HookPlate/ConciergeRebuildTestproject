@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct ConciergeRebuildTestprojectApp: App {
+    @StateObject var scheduleStore = ScheduleStore()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(scheduleStore)
         }
     }
 }

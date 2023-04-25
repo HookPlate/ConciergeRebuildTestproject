@@ -7,7 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		54715F5729F40E5F00981333 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54715F5629F40E5F00981333 /* TestView.swift */; };
+		5451558129F6F34C0041DC1A /* DayBannerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5451558029F6F34C0041DC1A /* DayBannerRow.swift */; };
+		5451558329F6F3750041DC1A /* SessionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5451558229F6F3750041DC1A /* SessionRow.swift */; };
+		54DFEE7F29F6F60300A17FE8 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DFEE7E29F6F60300A17FE8 /* Session.swift */; };
+		54DFEE8129F6F62400A17FE8 /* ScheduleForDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DFEE8029F6F62400A17FE8 /* ScheduleForDay.swift */; };
+		54DFEE8329F71EDD00A17FE8 /* StepForwardOneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DFEE8229F71EDD00A17FE8 /* StepForwardOneButton.swift */; };
+		54DFEE8629F7235300A17FE8 /* StepBackwardOneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DFEE8529F7235300A17FE8 /* StepBackwardOneButton.swift */; };
+		54DFEE8829F7A0FC00A17FE8 /* ScheduleStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DFEE8729F7A0FC00A17FE8 /* ScheduleStore.swift */; };
 		54F35FDC29F1D5E40022BC19 /* ConciergeRebuildTestprojectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F35FDB29F1D5E40022BC19 /* ConciergeRebuildTestprojectApp.swift */; };
 		54F35FDE29F1D5E40022BC19 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F35FDD29F1D5E40022BC19 /* ContentView.swift */; };
 		54F35FE029F1D5E50022BC19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54F35FDF29F1D5E50022BC19 /* Assets.xcassets */; };
@@ -15,7 +21,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		54715F5629F40E5F00981333 /* TestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		5451558029F6F34C0041DC1A /* DayBannerRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayBannerRow.swift; sourceTree = "<group>"; };
+		5451558229F6F3750041DC1A /* SessionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionRow.swift; sourceTree = "<group>"; };
+		54DFEE7E29F6F60300A17FE8 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		54DFEE8029F6F62400A17FE8 /* ScheduleForDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleForDay.swift; sourceTree = "<group>"; };
+		54DFEE8229F71EDD00A17FE8 /* StepForwardOneButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StepForwardOneButton.swift; path = ConciergeRebuildTestproject/Views/StepForwardOneButton.swift; sourceTree = SOURCE_ROOT; };
+		54DFEE8529F7235300A17FE8 /* StepBackwardOneButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepBackwardOneButton.swift; sourceTree = "<group>"; };
+		54DFEE8729F7A0FC00A17FE8 /* ScheduleStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleStore.swift; sourceTree = SOURCE_ROOT; };
 		54F35FD829F1D5E40022BC19 /* ConciergeRebuildTestproject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConciergeRebuildTestproject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54F35FDB29F1D5E40022BC19 /* ConciergeRebuildTestprojectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConciergeRebuildTestprojectApp.swift; sourceTree = "<group>"; };
 		54F35FDD29F1D5E40022BC19 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -34,6 +46,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		54DFEE8429F7231900A17FE8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				54DFEE8229F71EDD00A17FE8 /* StepForwardOneButton.swift */,
+				5451558029F6F34C0041DC1A /* DayBannerRow.swift */,
+				5451558229F6F3750041DC1A /* SessionRow.swift */,
+				54DFEE8529F7235300A17FE8 /* StepBackwardOneButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		54F35FCF29F1D5E40022BC19 = {
 			isa = PBXGroup;
 			children = (
@@ -53,9 +76,12 @@
 		54F35FDA29F1D5E40022BC19 /* ConciergeRebuildTestproject */ = {
 			isa = PBXGroup;
 			children = (
+				54DFEE8729F7A0FC00A17FE8 /* ScheduleStore.swift */,
+				54DFEE8429F7231900A17FE8 /* Views */,
 				54F35FDB29F1D5E40022BC19 /* ConciergeRebuildTestprojectApp.swift */,
 				54F35FDD29F1D5E40022BC19 /* ContentView.swift */,
-				54715F5629F40E5F00981333 /* TestView.swift */,
+				54DFEE8029F6F62400A17FE8 /* ScheduleForDay.swift */,
+				54DFEE7E29F6F60300A17FE8 /* Session.swift */,
 				54F35FDF29F1D5E50022BC19 /* Assets.xcassets */,
 				54F35FE129F1D5E50022BC19 /* Preview Content */,
 			);
@@ -140,9 +166,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				54715F5729F40E5F00981333 /* TestView.swift in Sources */,
+				54DFEE8829F7A0FC00A17FE8 /* ScheduleStore.swift in Sources */,
+				54DFEE7F29F6F60300A17FE8 /* Session.swift in Sources */,
+				5451558329F6F3750041DC1A /* SessionRow.swift in Sources */,
+				5451558129F6F34C0041DC1A /* DayBannerRow.swift in Sources */,
 				54F35FDE29F1D5E40022BC19 /* ContentView.swift in Sources */,
 				54F35FDC29F1D5E40022BC19 /* ConciergeRebuildTestprojectApp.swift in Sources */,
+				54DFEE8129F6F62400A17FE8 /* ScheduleForDay.swift in Sources */,
+				54DFEE8329F71EDD00A17FE8 /* StepForwardOneButton.swift in Sources */,
+				54DFEE8629F7235300A17FE8 /* StepBackwardOneButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
