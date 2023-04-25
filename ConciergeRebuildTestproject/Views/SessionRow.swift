@@ -22,7 +22,7 @@ struct SessionRow: View {
                 Text("\(session.numberOfAttendees)")
                     .fontWeight(.bold)
                 Spacer()
-                Text(session.full ? "Full" : "")
+                Text(session.numberOfAttendees == 6 ? "Full" : "")
                     .foregroundColor(.secondary)
             }
         }

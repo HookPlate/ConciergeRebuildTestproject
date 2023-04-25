@@ -55,35 +55,26 @@ class ScheduleStore: ObservableObject {
         "Sun"
     ]
     
+    let sessionTimes = [
+        "10.00-11.00am",
+        "11.30-12.00am",
+        "2.00-3.30pm",
+        "4.30-5.30pm"
+    ]
+    
     init() {
-        var myRandonAmount = Int(arc4random_uniform(7))
         var myIndex = 0
-        for i in 0...9 {
+        for _ in 0...9 {
             sessions.append(
                 Session(
                     sessionTitle: sessionTitles[myIndex],
-                    sessionTime: "2.00-3.00pm",
+                    sessionTime: sessionTimes.randomElement()!,
                     sessionLeader: trainers.randomElement()!,
-                    numberOfAttendees: 4,
-                    full: true))
+                    numberOfAttendees: Int(arc4random_uniform(7)),
+                    full: Bool.random()))
             
             myIndex += 1
-            myRandonAmount = Int(arc4random_uniform(7))
-//            for session in sessionTitles {
-//                days.append(
-//                    ScheduleForDay(
-//                        id: myIndex,
-//                        month: months.randomElement()!,
-//                        day: day,
-//                        sessionsOnThatDay:[
-//                                Session(sessionTitle: session,
-//                                        sessionTime: "2.00-3.00pm",
-//                                        sessionLeader: trainers.randomElement()!,
-//                                        numberOfAttendees: 4,
-//                                        full: true)
-//                        ]))
-//                        myIndex += 1
-//            }
+
         }
         
         for day in daysOfTheWeek {
@@ -99,25 +90,12 @@ class ScheduleStore: ObservableObject {
     }
     
     func returnRandomSessions(forThis: Int) -> [Session] {
-//        var resultSet = Set<Session>()
-//
-//        while resultSet.count < forThis {
-//            let randomIndex = Int(arc4random_uniform(UInt32(sessions.count)))
-//            resultSet.insert(sessions[randomIndex])
-//        }
-//
-//        let resultArray = Array(resultSet)
-//
-//        return resultArray
         var resultArray = [Session]()
         for _ in 0..<forThis {
             let randomIndex = Int(arc4random_uniform(UInt32(sessions.count)))
             resultArray.append(sessions[randomIndex])
         }
         return resultArray
-//        for i in 0...3 {
-//            let myRandomSession = sessions.randomElement()
-//        }
     }
     
     var sessions: [Session] = []
