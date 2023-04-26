@@ -1,13 +1,13 @@
 //
-//  StepBackwardOneButton.swift
+//  StepToStartButton.swift
 //  ConciergeRebuildTestproject
 //
-//  Created by robin tetley on 24/04/2023.
+//  Created by robin tetley on 26/04/2023.
 //
 
 import SwiftUI
 
-struct StepBackwardOneButton: View {
+struct StepToStartButton: View {
     
     var days: [ScheduleForDay]
     @Binding var currentIndex: Int
@@ -16,15 +16,14 @@ struct StepBackwardOneButton: View {
     var body: some View {
         Button(action: {
             withAnimation {
-                currentIndex = (currentIndex == 0) ? currentIndex + 0 : currentIndex - 1
-                scrollView.scrollTo(currentIndex,anchor: .leading)
+                scrollView.scrollTo(0)
             }
         }) {
-            Image(systemName: "arrowtriangle.backward.circle")
+            Image(systemName: "backward.end.fill")
                 .font(.system(size: 50))
                 .foregroundColor(.accentColor)
                 .opacity(0.8)
+                .scaleEffect(0.6)
         }
     }
 }
-

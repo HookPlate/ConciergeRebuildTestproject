@@ -24,7 +24,8 @@ struct StepForwardOneButton: View {
         }) {
             Image(systemName: "arrowtriangle.forward.circle")
                 .font(.system(size: 50))
-                .foregroundColor(.secondary)
+                .foregroundColor(.accentColor)
+                .opacity(0.8)
         }
     }
 }

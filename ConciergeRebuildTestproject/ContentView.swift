@@ -39,8 +39,10 @@ struct ContentView: View {
                         }
                     }
                     HStack {
+                        StepToStartButton(days: scheduleStore.days, currentIndex: $currentIndex, scrollView: scrollView)
                         StepBackwardOneButton(days: scheduleStore.days, currentIndex: $currentIndex, scrollView: scrollView)
                         StepForwardOneButton(days: scheduleStore.days, currentIndex: $currentIndex, scrollView: scrollView)
+                        StepToEndButton(days: scheduleStore.days, currentIndex: $currentIndex, scrollView: scrollView)
                     }
                     .navigationBarTitle("SouthGate")
                     .navigationBarTitleDisplayMode(.inline)

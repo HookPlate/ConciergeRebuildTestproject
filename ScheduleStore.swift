@@ -24,10 +24,16 @@ class ScheduleStore: ObservableObject {
     ]
     
     let trainers = [
-        "Carmela Ciria",
-        "Jim Heard",
+        "Tim Cook",
+        "Eddie Cue",
+        "Craig Federighi",
+        "Phil Schiller",
+        "Steve Wozniak",
+        "Deirdre O'Brien",
+        "Lisa Jackson",
+        "John Ternus",
         "Robin Tetley",
-        "Kamerum Orun Kingdom"
+        "Jeff Williams"
     ]
     
     let months = [
@@ -63,28 +69,25 @@ class ScheduleStore: ObservableObject {
     ]
     
     init() {
-        var myIndex = 0
-        for _ in 0...9 {
+        //sessions must be full before we append to days.
+        for i in 0...9 {
             sessions.append(
                 Session(
-                    sessionTitle: sessionTitles[myIndex],
+                    sessionTitle: sessionTitles[i],
                     sessionTime: sessionTimes.randomElement()!,
-                    sessionLeader: trainers.randomElement()!,
+                    sessionLeader: trainers[i],
                     numberOfAttendees: Int(arc4random_uniform(7)),
                     full: Bool.random()))
-            
-            myIndex += 1
-
         }
         
         for i in 0...6 {
             days.append(
                 ScheduleForDay(
                     id: i + 1,
-                    month: months[i],
+                    month: months[0],
                     day: daysOfTheWeek[i],
-                    sessionsOnThatDay: returnRandomSessions(forThis: Int.random(in: 2..<5)))
-            )
+                    sessionsOnThatDay: returnRandomSessions(forThis: Int.random(in: 2..<5))))
+            
         }
         
     }

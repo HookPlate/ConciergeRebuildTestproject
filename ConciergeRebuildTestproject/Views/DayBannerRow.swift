@@ -31,7 +31,7 @@ struct DayBannerRow: View {
                         .fontWeight(.bold)
                 }
                 Spacer()
-                Text("\(schedule.numberOfSessions)")
+                Text("\(schedule.numberOfSessions) Sessions")
                     .foregroundColor(.secondary)
             }
         }
