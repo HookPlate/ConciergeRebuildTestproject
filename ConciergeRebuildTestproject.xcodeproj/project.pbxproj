@@ -16,6 +16,7 @@
 		54DFEE8829F7A0FC00A17FE8 /* ScheduleStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DFEE8729F7A0FC00A17FE8 /* ScheduleStore.swift */; };
 		54DFEE8A29F8F55000A17FE8 /* StepToStartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DFEE8929F8F55000A17FE8 /* StepToStartButton.swift */; };
 		54DFEE8C29F8F67400A17FE8 /* StepToEndButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DFEE8B29F8F67400A17FE8 /* StepToEndButton.swift */; };
+		54DFEE8E29F9953D00A17FE8 /* CalendarScrollPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DFEE8D29F9953D00A17FE8 /* CalendarScrollPicker.swift */; };
 		54F35FDC29F1D5E40022BC19 /* ConciergeRebuildTestprojectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F35FDB29F1D5E40022BC19 /* ConciergeRebuildTestprojectApp.swift */; };
 		54F35FDE29F1D5E40022BC19 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F35FDD29F1D5E40022BC19 /* ContentView.swift */; };
 		54F35FE029F1D5E50022BC19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54F35FDF29F1D5E50022BC19 /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 		54DFEE8729F7A0FC00A17FE8 /* ScheduleStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleStore.swift; sourceTree = SOURCE_ROOT; };
 		54DFEE8929F8F55000A17FE8 /* StepToStartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepToStartButton.swift; sourceTree = "<group>"; };
 		54DFEE8B29F8F67400A17FE8 /* StepToEndButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepToEndButton.swift; sourceTree = "<group>"; };
+		54DFEE8D29F9953D00A17FE8 /* CalendarScrollPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalendarScrollPicker.swift; path = ConciergeRebuildTestproject/Views/CalendarScrollPicker.swift; sourceTree = SOURCE_ROOT; };
 		54F35FD829F1D5E40022BC19 /* ConciergeRebuildTestproject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConciergeRebuildTestproject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54F35FDB29F1D5E40022BC19 /* ConciergeRebuildTestprojectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConciergeRebuildTestprojectApp.swift; sourceTree = "<group>"; };
 		54F35FDD29F1D5E40022BC19 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +55,7 @@
 		54DFEE8429F7231900A17FE8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				54DFEE8D29F9953D00A17FE8 /* CalendarScrollPicker.swift */,
 				5451558029F6F34C0041DC1A /* DayBannerRow.swift */,
 				5451558229F6F3750041DC1A /* SessionRow.swift */,
 				54DFEE8229F71EDD00A17FE8 /* StepForwardOneButton.swift */,
@@ -172,6 +175,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54DFEE8E29F9953D00A17FE8 /* CalendarScrollPicker.swift in Sources */,
 				54DFEE8829F7A0FC00A17FE8 /* ScheduleStore.swift in Sources */,
 				54DFEE7F29F6F60300A17FE8 /* Session.swift in Sources */,
 				5451558329F6F3750041DC1A /* SessionRow.swift in Sources */,
