@@ -24,6 +24,7 @@ struct StepToStartButton: View {
                 .foregroundColor(.accentColor)
                 .opacity(0.8)
                 .scaleEffect(0.6)
+            //I thought about having the opacity increase once they scroll away from the start, to imply to the user that the button had become active but I realise it would look odd since it would only make sense on the leading button. 
         }
     }
 }
