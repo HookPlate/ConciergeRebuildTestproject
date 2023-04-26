@@ -24,10 +24,10 @@ class ScheduleStore: ObservableObject {
     ]
     
     let trainers = [
-        "Carmela",
-        "Jim",
-        "Robin",
-        "Kamerum"
+        "Carmela Ciria",
+        "Jim Heard",
+        "Robin Tetley",
+        "Kamerum Orun Kingdom"
     ]
     
     let months = [
@@ -77,12 +77,12 @@ class ScheduleStore: ObservableObject {
 
         }
         
-        for day in daysOfTheWeek {
+        for i in 0...6 {
             days.append(
                 ScheduleForDay(
-                    id: Int(arc4random_uniform(7)),
-                    month: months[0],
-                    day: day,
+                    id: i + 1,
+                    month: months[i],
+                    day: daysOfTheWeek[i],
                     sessionsOnThatDay: returnRandomSessions(forThis: Int.random(in: 2..<5)))
             )
         }

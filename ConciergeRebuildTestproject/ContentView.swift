@@ -12,8 +12,6 @@ struct ContentView: View {
     
     @EnvironmentObject var scheduleStore: ScheduleStore
     @State private var currentIndex = 0
-  //  var days: [ScheduleForDay]
-    var session = Session(sessionTitle: "Getting started on iPad", sessionTime: "10.00", sessionLeader: "Robin", numberOfAttendees: 3, full: false)
     
     init() {
         let navBarAppearance = UINavigationBar.appearance()

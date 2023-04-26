@@ -20,7 +20,7 @@ struct DayBannerRow: View {
             HStack {
                 Text(schedule.day)
                     .fontWeight(.bold)
-                if schedule.id == 0 {
+                if schedule.id == 1 {
                     Image(systemName:
                           "\(schedule.id).circle.fill")
                         .foregroundColor(.blue)
