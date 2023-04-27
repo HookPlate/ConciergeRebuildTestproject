@@ -105,6 +105,15 @@ class ScheduleStore: ObservableObject {
         return resultArray
     }
     
+    var previouslySelectedDay: CalendarDataForDay = CalendarDataForDay(dayName: "Mon", date: 0)
+    
+    func deselectDay(day: CalendarDataForDay) {
+//        calendarDays[0].dayName = "New"
+//        calendarDays[0].isSelected = true
+        calendarDays.first(where: { $0.id == id })?.isSelected = false
+     //   let myNewDay = calendarDays.filter {$0.id == id}
+    }
+    
     var sessions: [Session] = []
     
     @Published var days: [ScheduleForDay] = []

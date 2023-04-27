@@ -6,12 +6,15 @@
 
 
 import SwiftUI
-struct CalendarDataForDay: Hashable, Identifiable {
+struct CalendarDataForDay: Hashable, Identifiable{
     var dayName: String
     var date: Int
     var id = UUID()
     var isSelected = false
     
+//    static func < (lhs: CalendarDataForDay, rhs: CalendarDataForDay) -> Bool {
+//            lhs.dayName < rhs.dayName
+//        }
 }
 
 struct ContentView: View {
@@ -20,6 +23,7 @@ struct ContentView: View {
     @State private var currentIndex = 0
    // var calendarDays: [CalendarDataForDay] = []
     @State private var isDateSelected  = false
+   // var previouslySelectedDay: CalendarDataForDay = CalendarDataForDay(dayName: daysOfTheWeek[0], date: 2)
     
     let daysOfTheWeek = [
         "Mon",
@@ -40,7 +44,7 @@ struct ContentView: View {
 //        for i in 0..<7 {
 //            calendarDays.append(CalendarDataForDay(dayName: daysOfTheWeek[i], date: i))
 //        }
-        
+       // previouslySelectedDay = CalendarDataForDay(dayName: daysOfTheWeek[0], date: 2)
     }
     
     var body: some View {
@@ -94,6 +98,7 @@ struct ContentView: View {
                             ScrollView(.horizontal) {
                                                                 LazyHStack {
                                                                     ForEach($scheduleStore.calendarDays) { $day in
+                                                                        let myDay = day
                                                                         CalendarScrollPicker(day: day)
                                                                             .padding(8)
                                                                             .onTapGesture {
@@ -102,7 +107,8 @@ struct ContentView: View {
                                                                                     scrollView.scrollTo(day.date)
                                                                                     //day.toggle()
                                                                                     day.isSelected.toggle()
-                                                                                    
+                                                                                   // previouslySelectedDay = day
+                                                                                    scheduleStore.deselectDay(day: myDay)
                                                                                 }
                                                                             }
                                                                     }
