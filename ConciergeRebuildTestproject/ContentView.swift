@@ -6,17 +6,20 @@
 
 
 import SwiftUI
-struct CalendarData: Identifiable {
-    var day: String
+struct CalendarDataForDay: Hashable, Identifiable {
+    var dayName: String
     var date: Int
     var id = UUID()
+    var isSelected = false
+    
 }
 
 struct ContentView: View {
     
     @EnvironmentObject var scheduleStore: ScheduleStore
     @State private var currentIndex = 0
-    var calendarDays: [CalendarData] = []
+   // var calendarDays: [CalendarDataForDay] = []
+    @State private var isDateSelected  = false
     
     let daysOfTheWeek = [
         "Mon",
@@ -34,9 +37,9 @@ struct ContentView: View {
         navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.systemBlue]
         navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.systemBlue]
         
-        for i in 0..<7 {
-            calendarDays.append(CalendarData(day: daysOfTheWeek[i], date: i))
-        }
+//        for i in 0..<7 {
+//            calendarDays.append(CalendarDataForDay(dayName: daysOfTheWeek[i], date: i))
+//        }
         
     }
     
@@ -90,17 +93,18 @@ struct ContentView: View {
                         }
                             ScrollView(.horizontal) {
                                                                 LazyHStack {
-                                                                    ForEach(calendarDays) { day in
-                                                                        CalendarScrollPicker(day: day.day, date: day.date)
+                                                                    ForEach($scheduleStore.calendarDays) { $day in
+                                                                        CalendarScrollPicker(day: day)
                                                                             .padding(8)
                                                                             .onTapGesture {
                                                                                 
                                                                                 withAnimation {
                                                                                     scrollView.scrollTo(day.date)
+                                                                                    //day.toggle()
+                                                                                    day.isSelected.toggle()
+                                                                                    
                                                                                 }
                                                                             }
-                                                    
-                                                                         //   .frame(width: geo.size.width / 10 , height: geo.size.height / 800)
                                                                     }
                                                                     
                                                                 }

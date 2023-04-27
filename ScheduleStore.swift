@@ -90,6 +90,10 @@ class ScheduleStore: ObservableObject {
             
         }
         
+        for i in 0..<7 {
+            calendarDays.append(CalendarDataForDay(dayName: daysOfTheWeek[i], date: i))
+        }
+        
     }
     
     func returnRandomSessions(forThis: Int) -> [Session] {
@@ -104,4 +108,6 @@ class ScheduleStore: ObservableObject {
     var sessions: [Session] = []
     
     @Published var days: [ScheduleForDay] = []
+    
+    @Published var calendarDays: [CalendarDataForDay] = []
 }
