@@ -91,7 +91,7 @@ class ScheduleStore: ObservableObject {
         }
         
         for i in 0..<7 {
-            calendarDays.append(CalendarDataForDay(dayName: daysOfTheWeek[i], date: i))
+            calendarDays.append(CalendarDataForDay(dayName: daysOfTheWeek[i], date: i, id: i))
         }
         
     }
@@ -105,12 +105,14 @@ class ScheduleStore: ObservableObject {
         return resultArray
     }
     
-    var previouslySelectedDay: CalendarDataForDay = CalendarDataForDay(dayName: "Mon", date: 0)
+    var previouslySelectedDay = 0
     
-    func deselectDay(day: CalendarDataForDay) {
+    func deselectDay(dayIndex: Int) {
 //        calendarDays[0].dayName = "New"
-//        calendarDays[0].isSelected = true
-        calendarDays.first(where: { $0.id == id })?.isSelected = false
+        calendarDays[previouslySelectedDay].isSelected = false
+        calendarDays[dayIndex].isSelected = true
+        previouslySelectedDay = dayIndex
+       // calendarDays.first(where: { $0.id == id })?.isSelected = false
      //   let myNewDay = calendarDays.filter {$0.id == id}
     }
     

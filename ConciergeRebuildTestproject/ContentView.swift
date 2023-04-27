@@ -9,7 +9,7 @@ import SwiftUI
 struct CalendarDataForDay: Hashable, Identifiable{
     var dayName: String
     var date: Int
-    var id = UUID()
+    var id : Int
     var isSelected = false
     
 //    static func < (lhs: CalendarDataForDay, rhs: CalendarDataForDay) -> Bool {
@@ -98,7 +98,7 @@ struct ContentView: View {
                             ScrollView(.horizontal) {
                                                                 LazyHStack {
                                                                     ForEach($scheduleStore.calendarDays) { $day in
-                                                                        let myDay = day
+                                                                      //  let myDay = day
                                                                         CalendarScrollPicker(day: day)
                                                                             .padding(8)
                                                                             .onTapGesture {
@@ -108,7 +108,7 @@ struct ContentView: View {
                                                                                     //day.toggle()
                                                                                     day.isSelected.toggle()
                                                                                    // previouslySelectedDay = day
-                                                                                    scheduleStore.deselectDay(day: myDay)
+                                                                                    scheduleStore.deselectDay(dayIndex: day.id)
                                                                                 }
                                                                             }
                                                                     }
