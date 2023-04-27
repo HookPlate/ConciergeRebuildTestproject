@@ -12,6 +12,7 @@ struct StepForwardOneButton: View {
     var days: [ScheduleForDay]
     @Binding var currentIndex: Int
     let scrollView: ScrollViewProxy
+    let geoReader: GeometryProxy
   
     
     var body: some View {
@@ -24,9 +25,13 @@ struct StepForwardOneButton: View {
         }) {
             Image(systemName: "arrowtriangle.forward.circle")
                 .font(.system(size: 50))
-                .foregroundColor(.accentColor)
-                .opacity(0.8)
+                .foregroundColor(.black)
+                .opacity(0.6)
+                
         }
+        //.frame(height: 90)
+        //.controlSize(.large)
+        
     }
 }
 

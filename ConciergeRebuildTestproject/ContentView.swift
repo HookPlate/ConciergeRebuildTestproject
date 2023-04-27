@@ -6,16 +6,7 @@
 
 
 import SwiftUI
-struct CalendarDataForDay: Hashable, Identifiable{
-    var dayName: String
-    var date: Int
-    var id : Int
-    var isSelected = false
-    
-//    static func < (lhs: CalendarDataForDay, rhs: CalendarDataForDay) -> Bool {
-//            lhs.dayName < rhs.dayName
-//        }
-}
+
 
 struct ContentView: View {
     
@@ -69,10 +60,6 @@ struct ContentView: View {
                                 }
                             }
                         }
-//                        Spacer()
-
-                       
-                        
                         .navigationBarTitle("SouthGate")
                         .navigationBarTitleDisplayMode(.inline)
                         .toolbar {
@@ -117,17 +104,14 @@ struct ContentView: View {
                                                                 
                                  }
                             .frame(height: geo.size.height / 15)
-//                        HStack {
-//                            StepToStartButton(days: scheduleStore.days, currentIndex: $currentIndex, scrollView: scrollView)
-//                            StepBackwardOneButton(days: scheduleStore.days, currentIndex: $currentIndex, scrollView: scrollView)
-//                            StepForwardOneButton(days: scheduleStore.days, currentIndex: $currentIndex, scrollView: scrollView)
-//                            StepToEndButton(days: scheduleStore.days, currentIndex: $currentIndex, scrollView: scrollView)
-//                        }
-                        
-                        //scrollview above,reader below
-                           // ScrollViewReader { scrollView in
-                            
-                           // }
+                        HStack {
+                        //    StepToStartButton(days: scheduleStore.days, currentIndex: $currentIndex, scrollView: scrollView)
+                         //   StepBackwardOneButton(days: scheduleStore.days, currentIndex: $currentIndex, scrollView: scrollView)
+                            StepForwardOneButton(days: scheduleStore.days, currentIndex: $currentIndex, scrollView: scrollView, geoReader: geo)
+                        //    StepToEndButton(days: scheduleStore.days, currentIndex: $currentIndex, scrollView: scrollView)
+                        }
+                        .frame(height: geo.size.height / 20)
+                    
                     }
                     
                 }

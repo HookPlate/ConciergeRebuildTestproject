@@ -22,8 +22,8 @@ struct StepBackwardOneButton: View {
         }) {
             Image(systemName: "arrowtriangle.backward.circle")
                 .font(.system(size: 50))
-                .foregroundColor(.accentColor)
-                .opacity(0.8)
+                .foregroundColor(.black)
+                .opacity(0.6)
         }
     }
 }

@@ -83,16 +83,18 @@ class ScheduleStore: ObservableObject {
         for i in 0...6 {
             days.append(
                 ScheduleForDay(
-                    id: i + 1,
+                    id: i,
                     month: months[0],
                     day: daysOfTheWeek[i],
-                    sessionsOnThatDay: returnRandomSessions(forThis: Int.random(in: 2..<5))))
-            
+                    sessionsOnThatDay: returnRandomSessions(forThis: Int.random(in: 2..<5))
+                )
+            )
+            calendarDays.append(ScrollingCalendarModel(dayName: daysOfTheWeek[i], date: i, id: i))
         }
         
-        for i in 0..<7 {
-            calendarDays.append(CalendarDataForDay(dayName: daysOfTheWeek[i], date: i, id: i))
-        }
+//        for i in 0...6 {
+//            calendarDays.append(CalendarDataForDay(dayName: daysOfTheWeek[i], date: i, id: i))
+//        }
         
     }
     
@@ -108,17 +110,14 @@ class ScheduleStore: ObservableObject {
     var previouslySelectedDay = 0
     
     func deselectDay(dayIndex: Int) {
-//        calendarDays[0].dayName = "New"
         calendarDays[previouslySelectedDay].isSelected = false
         calendarDays[dayIndex].isSelected = true
         previouslySelectedDay = dayIndex
-       // calendarDays.first(where: { $0.id == id })?.isSelected = false
-     //   let myNewDay = calendarDays.filter {$0.id == id}
     }
     
     var sessions: [Session] = []
     
     @Published var days: [ScheduleForDay] = []
     
-    @Published var calendarDays: [CalendarDataForDay] = []
+    @Published var calendarDays: [ScrollingCalendarModel] = []
 }

@@ -21,9 +21,9 @@ struct StepToEndButton: View {
         }) {
             Image(systemName: "forward.end.fill")
                 .font(.system(size: 50))
-                .foregroundColor(.accentColor)
-                .opacity(0.8)
-                .scaleEffect(0.6)
+                .foregroundColor(.black)
+                .opacity(0.6)
+                //.scaleEffect(0.6)
         }
     }
 }

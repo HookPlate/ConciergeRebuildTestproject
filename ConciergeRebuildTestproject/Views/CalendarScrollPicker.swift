@@ -12,7 +12,7 @@ struct CalendarScrollPicker: View {
 //    var day: String
 //    var date: Int
    //  @Binding var isSelected: Bool
-      var day: CalendarDataForDay
+      var day: ScrollingCalendarModel
     
     var body: some View {
         VStack {
